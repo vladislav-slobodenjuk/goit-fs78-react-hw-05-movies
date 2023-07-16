@@ -14,6 +14,20 @@ export async function getDayTrending() {
   return data.results;
 }
 
+const searchByIdInst = axios.create({
+  baseURL: 'https://api.themoviedb.org/3/movie/',
+  headers: {
+    accept: 'application/json',
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODU0Y2RkODdhYTkwNTNjYTAwMjI5ZmVhNzNlNTkyNSIsInN1YiI6IjYxODZmYWFkZmU2MzE4MDA2NDgzZTdkZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vm-UaTyMPJ2HhXiSRvz-VpPqqqKEF-3PBdhfYlg5v3g',
+  },
+});
+
+export async function searchById(id) {
+  const { data } = await searchByIdInst.get(id);
+  return data;
+}
+
 // const instance = axios.create({
 //   baseURL: 'https://pixabay.com/api/',
 //   params: {

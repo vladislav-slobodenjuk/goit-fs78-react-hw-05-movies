@@ -15,7 +15,7 @@ const MovieDetails = () => {
     (async () => {
       const res = await searchById(movieId);
       setMovie(res);
-      // console.log(res);
+      console.log(res);
     })();
   }, [movieId]);
 
@@ -76,8 +76,8 @@ const MovieDetails = () => {
           </Additional>
 
           <Routes>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+            <Route path="cast" element={<Cast movieId={movieId} />} />
+            <Route path="reviews" element={<Reviews movieId={movieId} />} />
           </Routes>
         </div>
       </main>

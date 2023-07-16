@@ -9,7 +9,7 @@ export const Container = styled.div`
   margin: 0 auto;
   /* max-width: 960px; */
 
-  /* padding-bottom: 24px; */
+  padding-bottom: 16px;
 
   /* padding-top: 20px; */
   /* padding-bottom: 20px; */

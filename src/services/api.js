@@ -23,8 +23,9 @@ const searchByIdInst = axios.create({
   },
 });
 
-export async function searchById(id) {
-  const { data } = await searchByIdInst.get(id);
+export async function searchById(id, param) {
+  const url = param ? `${id}/${param}` : id;
+  const { data } = await searchByIdInst.get(url);
   return data;
 }
 

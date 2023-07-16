@@ -6,6 +6,9 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  /* padding: 0 16px; */
+  /* margin: 0 auto; */
+
   padding: 8px 0;
   margin-bottom: 16px;
   border-bottom: 1px solid black;

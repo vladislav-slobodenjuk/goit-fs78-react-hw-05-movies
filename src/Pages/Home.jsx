@@ -1,7 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 
 const Home = () => {
-  return <div>Home</div>;
+  const [movies, setMovies] = useState([]);
+
+  // useEffect(() => {
+  //   first
+
+  //   return () => {
+  //     second
+  //   }
+  // }, [third])
+
+  return <main>Home</main>;
 };
 
 export default Home;

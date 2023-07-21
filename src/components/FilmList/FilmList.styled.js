@@ -32,7 +32,7 @@ export const CardWrapper = styled.div`
   }
 `;
 
-export const ProductName = styled.h3`
+export const MovieName = styled.h3`
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;

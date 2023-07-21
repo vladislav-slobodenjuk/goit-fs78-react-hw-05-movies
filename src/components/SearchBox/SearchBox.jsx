@@ -1,22 +1,18 @@
 import { Form, Input, Icon } from './SearchBox.styled';
 
-export const SearchBox = ({ value, onHandleSubmit }) => {
+export const SearchBox = ({ onHandleSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
     const query = e.target.children.searchInput.value.trim();
     onHandleSubmit(query);
+    e.target.reset();
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <Icon />
-      <Input
-        name="searchInput"
-        type="text"
-        // value={value}
-        // onChange={e => onChange(e.target.value)}
-      />
+      <Input name="searchInput" type="text" />
     </Form>
   );
 };

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { Container } from './App.styled';
 import Header from 'components/Header/Header';
@@ -15,7 +15,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId/*" element={<MovieDetails />} />
-        <Route path="*" element={<div>Not found</div>} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Container>
   );

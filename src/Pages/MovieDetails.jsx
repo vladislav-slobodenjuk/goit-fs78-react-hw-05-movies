@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
 import { searchById } from 'services/api';
 
-import { Additional, Details, StyledLink } from './MovieDetails.styled';
 import { Cast } from 'components/Cast/Cast';
 import { Reviews } from 'components/Reviews/Reviews';
+import { Additional, Details, StyledLink } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -12,6 +12,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     if (!movieId) return;
+
     (async () => {
       const res = await searchById(movieId);
       setMovie(res);

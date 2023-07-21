@@ -7,7 +7,6 @@ import { searchByQuery } from 'services/api';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  // const [search, setSearch] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
 
   const query = searchParams.get('query');
@@ -15,16 +14,14 @@ const Movies = () => {
 
   const updateQuery = query => {
     if (query === '') return;
-    // const searchParam = query !== '' ? query : '';
     setSearchParams({ query });
-    // setSearch(query);
   };
 
   useEffect(() => {
     if (!query) return;
 
     (async () => {
-      // console.log(search);
+      // console.log(query);
       const res = await searchByQuery(query);
       setMovies(res);
       // console.log(res);
@@ -36,7 +33,7 @@ const Movies = () => {
       <h1>Movies Search</h1>
       <SearchBox onHandleSubmit={updateQuery} />
       {movies.length > 0 && <FilmList movies={movies} />}
-      {/* {search !== '' && movies.length === 0 && <p>Nothig Found</p>} */}
+      {query && movies.length === 0 && <p>Nothig Found</p>}
     </main>
   );
 };

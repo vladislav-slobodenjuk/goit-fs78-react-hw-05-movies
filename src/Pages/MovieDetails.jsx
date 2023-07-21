@@ -16,7 +16,7 @@ const MovieDetails = () => {
     (async () => {
       const res = await searchById(movieId);
       setMovie(res);
-      console.log(res);
+      // console.log(res);
     })();
   }, [movieId]);
 

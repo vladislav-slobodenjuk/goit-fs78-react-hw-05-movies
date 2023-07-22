@@ -1,15 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { searchById } from 'services/api';
 
-import { Cast } from 'components/Cast/Cast';
-import { Reviews } from 'components/Reviews/Reviews';
+// import { Cast } from 'components/Cast/Cast';
+// import { Reviews } from 'components/Reviews/Reviews';
+import { Loader } from 'components/Loader/Loader';
 import {
   Additional,
   Details,
   StyledBackLink,
   StyledLink,
 } from './MovieDetails.styled';
+
+const LazyCast = lazy(() => import('../components/Cast/Cast'));
+const LazyReviews = lazy(() => import('../components/Reviews/Reviews'));
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -85,10 +90,15 @@ const MovieDetails = () => {
             <StyledLink to="reviews">Reviews</StyledLink>
           </Additional>
 
-          <Routes>
-            <Route path="cast" element={<Cast movieId={movieId} />} />
-            <Route path="reviews" element={<Reviews movieId={movieId} />} />
-          </Routes>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="cast" element={<LazyCast movieId={movieId} />} />
+              <Route
+                path="reviews"
+                element={<LazyReviews movieId={movieId} />}
+              />
+            </Routes>
+          </Suspense>
         </div>
       </main>
     )

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { searchById } from 'services/api';
 
-export const Reviews = ({ movieId }) => {
+const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const Reviews = ({ movieId }) => {
       {reviews && (
         <ul>
           {reviews.map(({ id, author, content }) => (
-            <li key={id}>
+            <li key={id} style={{ marginBottom: '16px' }}>
               <h3>{author}</h3>
               <p>{content}</p>
             </li>
@@ -33,3 +33,5 @@ export const Reviews = ({ movieId }) => {
 Reviews.propTypes = {
   movieId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
+
+export default Reviews;

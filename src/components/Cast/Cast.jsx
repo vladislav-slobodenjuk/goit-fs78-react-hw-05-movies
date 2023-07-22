@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { searchById } from 'services/api';
 
-export const Cast = ({ movieId }) => {
+const Cast = ({ movieId }) => {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const Cast = ({ movieId }) => {
       {cast && (
         <ul>
           {cast.map(({ id, profile_path, name }) => (
-            <li key={id}>
+            <li key={id} style={{ marginBottom: '16px' }}>
               <img
                 src={`https://image.tmdb.org/t/p/w342/${profile_path}`}
                 alt={name}
@@ -38,3 +38,5 @@ export const Cast = ({ movieId }) => {
 Cast.propTypes = {
   movieId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
+
+export default Cast;

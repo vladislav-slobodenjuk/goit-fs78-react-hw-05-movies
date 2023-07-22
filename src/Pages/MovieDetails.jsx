@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react';
-import { Route, Routes, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { searchById } from 'services/api';
 
 import { Cast } from 'components/Cast/Cast';
 import { Reviews } from 'components/Reviews/Reviews';
-import { Additional, Details, StyledLink } from './MovieDetails.styled';
+import {
+  Additional,
+  Details,
+  StyledBackLink,
+  StyledLink,
+} from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     if (!movieId) return;
@@ -16,13 +23,15 @@ const MovieDetails = () => {
     (async () => {
       const res = await searchById(movieId);
       setMovie(res);
-      // console.log(res);
     })();
   }, [movieId]);
 
   return (
     movie && (
       <main>
+        <StyledBackLink to={backLinkLocationRef.current}>
+          Go Back
+        </StyledBackLink>
         <Details>
           <div className="modal__wrapper">
             <img

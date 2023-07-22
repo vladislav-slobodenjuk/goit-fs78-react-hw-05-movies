@@ -1,4 +1,3 @@
-// import { NavLink } from 'react-router-dom';
 import { StyledHeader, StyledLogo, StyledNavLink } from './Header.styled';
 
 const Header = () => {

@@ -1,5 +1,19 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+export const StyledBackLink = styled(Link)`
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  border: 1px solid black;
+
+  &:hover {
+    color: white;
+    background-color: orangered;
+  }
+`;
 
 export const Details = styled.div`
   .modal__wrapper {
@@ -8,6 +22,7 @@ export const Details = styled.div`
     row-gap: 22px;
     align-items: center;
 
+    margin-top: 16px;
     margin-bottom: 16px;
   }
 
@@ -214,8 +229,6 @@ export const Details = styled.div`
   }
 `;
 
-// export const Additional = styled.div``
-
 export const Additional = styled.ul`
   display: flex;
   /* align-items: center; */
@@ -242,7 +255,8 @@ export const StyledLink = styled(NavLink)`
   font-weight: 500;
   border: 1px solid black;
 
-  &.active {
+  &.active,
+  &:hover {
     color: white;
     background-color: orangered;
   }

@@ -10,10 +10,9 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const query = searchParams.get('query');
-  // console.log(query);
 
   const updateQuery = query => {
-    if (query === '') return;
+    if (query === '') return console.log('empty query');
     setSearchParams({ query });
   };
 
@@ -21,10 +20,8 @@ const Movies = () => {
     if (!query) return;
 
     (async () => {
-      // console.log(query);
-      const res = await searchByQuery(query);
-      setMovies(res);
-      // console.log(res);
+      const response = await searchByQuery(query);
+      setMovies(response);
     })();
   }, [query]);
 

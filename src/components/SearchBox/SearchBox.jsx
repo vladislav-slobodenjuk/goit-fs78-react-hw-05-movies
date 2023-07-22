@@ -4,7 +4,7 @@ export const SearchBox = ({ onHandleSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const query = e.target.children.searchInput.value.trim();
+    const query = e.target.elements.searchInput.value.trim();
     onHandleSubmit(query);
     e.target.reset();
   };

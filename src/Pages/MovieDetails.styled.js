@@ -2,11 +2,15 @@ import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
 export const StyledBackLink = styled(Link)`
+  display: inline-block;
+  margin-bottom: 16px;
   padding: 4px 8px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: black;
+
   font-weight: 500;
+  text-decoration: none;
+
+  color: black;
+  border-radius: 4px;
   border: 1px solid black;
 
   &:hover {
@@ -16,21 +20,20 @@ export const StyledBackLink = styled(Link)`
 `;
 
 export const Details = styled.div`
+  margin-bottom: 16px;
+
   .modal__wrapper {
     display: flex;
     flex-direction: column;
     row-gap: 22px;
     align-items: center;
-
-    margin-top: 16px;
-    margin-bottom: 16px;
   }
 
   .modal__poster {
     width: 248px;
-    height: 315px;
+    /* height: 315px; */
     object-fit: cover;
-    object-position: top;
+    /* object-position: top; */
 
     border-radius: 5px;
     box-shadow: 1px 1px 24px 2px rgba(1, 1, 1, 0.45);
@@ -99,7 +102,7 @@ export const Details = styled.div`
   }
 
   .modal__text {
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 
     font-size: 14px;
     line-height: calc(20 / 12);
@@ -172,7 +175,7 @@ export const Details = styled.div`
     }
 
     .modal__text {
-      margin-bottom: 24px;
+      /* margin-bottom: 24px; */
     }
   }
 

@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <main>
-      <h1>Trending today</h1>
+      <h1 style={{ marginBottom: '16px' }}>Trending today</h1>
       {movies.length > 0 && <FilmList movies={movies} />}
     </main>
   );

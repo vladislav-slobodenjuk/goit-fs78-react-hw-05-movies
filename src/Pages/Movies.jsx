@@ -27,7 +27,7 @@ const Movies = () => {
 
   return (
     <main>
-      <h1>Movies Search</h1>
+      <h1 style={{ marginBottom: '16px' }}>Movies Search</h1>
       <SearchBox onHandleSubmit={updateQuery} />
       {movies.length > 0 && <FilmList movies={movies} />}
       {query && movies.length === 0 && <p>Nothig Found</p>}

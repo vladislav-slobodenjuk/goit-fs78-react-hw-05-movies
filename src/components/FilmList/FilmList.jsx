@@ -7,17 +7,20 @@ export const FilmList = ({ movies }) => {
 
   return (
     <Container>
-      {movies.map(({ id, title, poster_path }) => (
-        <CardWrapper key={id}>
-          <Link to={`/movies/${id}`} state={{ from: location }}>
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${poster_path}`}
-              alt={title}
-            />
-            <MovieName>{title}</MovieName>
-          </Link>
-        </CardWrapper>
-      ))}
+      {movies.map(({ id, title, poster_path }) => {
+        const imgUrl = poster_path
+          ? `https://image.tmdb.org/t/p/w342/${poster_path}`
+          : 'https://www.tgv.com.my/assets/images/404/movie-poster.jpg';
+
+        return (
+          <CardWrapper key={id}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
+              <img src={imgUrl} alt={title} loading="lazy" />
+              <MovieName>{title}</MovieName>
+            </Link>
+          </CardWrapper>
+        );
+      })}
     </Container>
   );
 };

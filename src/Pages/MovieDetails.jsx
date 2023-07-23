@@ -83,12 +83,12 @@ const MovieDetails = () => {
           </div>
         </Details>
 
-        <div>
+        <Additional>
           <h2>Additional information</h2>
-          <Additional>
+          <ul className="subPageList">
             <StyledLink to="cast">Cast</StyledLink>
             <StyledLink to="reviews">Reviews</StyledLink>
-          </Additional>
+          </ul>
 
           <Suspense fallback={<Loader />}>
             <Routes>
@@ -99,7 +99,7 @@ const MovieDetails = () => {
               />
             </Routes>
           </Suspense>
-        </div>
+        </Additional>
       </main>
     )
   );

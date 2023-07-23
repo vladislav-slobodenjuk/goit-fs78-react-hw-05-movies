@@ -238,21 +238,18 @@ export const Details = styled.div`
   }
 `;
 
-export const Additional = styled.ul`
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  /* gap: 12px; */
-  /* padding: 0 16px; */
-  /* margin: 0 auto; */
+export const Additional = styled.div`
+  h2 {
+    margin-bottom: 16px;
+  }
 
-  padding: 8px 0;
-  margin-bottom: 16px;
-  /* border-top: 1px solid black; */
-  /* border-bottom: 1px solid black; */
+  .subPageList {
+    display: flex;
+    margin-bottom: 16px;
 
-  a:not(:last-child) {
-    margin-right: 10px;
+    a:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 `;
 

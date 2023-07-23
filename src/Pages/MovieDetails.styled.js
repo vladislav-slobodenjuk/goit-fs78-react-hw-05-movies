@@ -122,14 +122,20 @@ export const Details = styled.div`
   }
 
   @media screen and (min-width: 560px) {
+    /* .modal__wrapper {
+      flex-direction: row;
+      column-gap: 16px;
+      align-items: flex-start;
+    } */
+  }
+
+  @media screen and (min-width: 768px) {
     .modal__wrapper {
       flex-direction: row;
       column-gap: 16px;
       align-items: flex-start;
     }
-  }
 
-  @media screen and (min-width: 768px) {
     .modal__container {
       width: 704px;
       min-height: 488px;

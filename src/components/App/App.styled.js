@@ -6,19 +6,17 @@ export const Container = styled.div`
   /* grid-gap: 16px; */
 
   padding: 0 16px;
-  margin: 0 auto;
   padding-bottom: 16px;
+  margin: 0 auto;
 
-  /* padding-top: 20px; */
-  /* padding-bottom: 20px; */
-
-  width: 370px;
-
-  font-size: 20px;
+  width: 320px;
   color: #010101;
+
+  transition: all 0.5s;
 
   @media screen and (min-width: 768px) {
     width: 768px;
+    font-size: 20px;
   }
 
   @media screen and (min-width: 1280px) {
